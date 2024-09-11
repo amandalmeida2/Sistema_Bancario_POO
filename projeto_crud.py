@@ -99,8 +99,6 @@ class Pessoa:
                 self.instrucao = 'Superior completo'
 
 
-
-
 #***********************CLASSE CLIENTE FILHA DE PESSOA**************************
 class Cliente(Pessoa):
 
@@ -134,43 +132,7 @@ class Cliente(Pessoa):
 
         self._cadastro = client
 
-        #Tenho que fazer que esse método reconheça o CRUD pois esse até corresponde aos usuários do DB
-
-        # match int(client['op']):
-
-        #     case 1: # Seria o adicionar
-        #          print()
-
-
-        #     case 2: # Seria o atualizar
-        #          indice = client['index']
-        #          client.pop('op', None)
-        #          client.pop('index', None)
-        #          self.cadastro[indice].update(client)
-
-            # case 3: # Seria o Criar Conta
-            #      indice = client['index']
-            #      client.pop('op', None)
-            #      client.pop('index', None)
-            #      self.cadastro[indice].update(client)
-
-            #      #Vamos adicionar os campos faltantes no csv
-            #      with open("tab_clientes.csv", "r") as arquivo:
-            #           reader = csv.reader(arquivo)
-            #           row_update = [row for row in reader if row[0] == self.cadastro[indice]['cpf']]
-
-            #      with open("tab_clientes.csv", "w", newline="") as arquivo:
-            #           writer = csv.writer(arquivo)
-            #           for row in row_update:
-            #               writer.writerow(self.cadastro[indice].update(client))
-
-            # case 4: # Seria o excluir
-            #        client.pop('op', None)
-            #        self.cadastro.remove(client)
-
-
-
-
+        
     @property
     def linha(self) -> dict:
         return self._linha
@@ -315,7 +277,7 @@ class Cliente(Pessoa):
                 escrita.writeheader()
                 escrita.writerows(new_lista)
 
-           #print(new_lista)
+           
            print(f'\nCliente {registro} atualizado com sucesso!')
 
 
@@ -346,7 +308,7 @@ class Cliente(Pessoa):
                 escrita.writeheader()
                 escrita.writerows(new_lista) # adiciona todos novamente no CSV
 
-           #print(new_lista)
+           
            print(f'\nConta: {registro} criada com sucesso!')
 
 
